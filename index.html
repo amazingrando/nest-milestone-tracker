@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Nest Milestone Tracker</title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="site.webmanifest" rel="manifest">
+    <link
+    href="icon.png" rel="apple-touch-icon">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <meta content="#fafafa" name="theme-color">
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">Nest Milestone Tracker</h1>
+          <p class="small">
+            <a href="https://www.drivethrurpg.com/product/153980/Nest--A-World-of-Adventure-for-Fate-Core?affiliate_id=144937">Get the PDF on DriveThruRPG</a>
+          </p>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class="h3">You Can Gain a
+            <span class="text-danger">Minor Milestone</span>
+            Upon...</h2>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" data-milestone="minor" id="minor1" type="checkbox">
+            <label class="custom-control-label" for="minor1">...taking physical stress or a mild consequence.</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" data-milestone="minor" id="minor2" type="checkbox">
+            <label class="custom-control-label" for="minor2">...succeeding with style on a difficult roll (whose difficulty is higher than the skill rank used).</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" data-milestone="minor" id="minor3" type="checkbox">
+            <label class="custom-control-label" for="minor3">...succeeding at a major cost on any roll.</label>
+          </div>
+
+          <h2 class="h3 mt-5">You Can Gain a
+            <span class="text-danger">Significant Milestone</span>, if You Have Already Gained a Minor Milestone, Upon...</h2>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" data-milestone="sig" id="sig1" type="checkbox">
+            <label class="custom-control-label" for="sig1">...taking out an opponent.</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" data-milestone="sig" id="sig2" type="checkbox">
+            <label class="custom-control-label" for="sig2">...suffering a moderate consequence or higher.</label>
+          </div>
+
+          <h2 class="h3 mt-5">You Can Gain a
+            <span class="text-danger">Major Milestone</span>, if You Have Already Gained a Significant Milestone, Upon...</h2>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" data-milestone="major" id="major1" type="checkbox">
+            <label class="custom-control-label" for="major1">...conceding a high-stakes conflict (GM’s call).</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" data-milestone="major" id="major2" type="checkbox">
+            <label class="custom-control-label" for="major2">...being taken out in a high-stakes conflict (GM’s call).</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" data-milestone="major" id="major3" type="checkbox">
+            <label class="custom-control-label" for="major3">...defeating a major enemy, such as a Vulturine. In this case, the entire group is eligible for a major milestone.</label>
+          </div>
+        </div>
+
+        <div class="col-md-4 ">
+          <div class="card bg-light mb-5 collapse" id="milestoneTracker">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const inputs = document.querySelectorAll('[data-milestone]');
+      const milestones = {
+        minor: {
+          text: `<h4>🥉 Minor Milestone</h4><p class="small"><strong>Upon reaching a minor milestone</strong>, you can add a stunt; replace one stunt with another; swap two skills that are adjacent on the skill pyramid; or rewrite one of your two free aspects. If you are comfortable with handling a milestone during a session, you can refresh your pool of fate points. You also can begin to recover a moderate consequence.</p><p class="small">Minor milestones represent the gradual recovery of a heroic identity.</p>`
+        },
+        sig: {
+          text: `<h4>🥈 Significant Milestone</h4><p class="small"><strong>Upon achieving a significant milestone</strong>, you can rewrite either your hook or mundane life aspect, or you can swap any two skills in your pyramid, no matter what the ranks. You can also begin to recover a severe consequence. You do not gain new skill ranks.</p><p class="small">Significant milestones represent sudden transformations from the mundane to the heroic.</p>`
+        },
+        major: {
+          text: `<h4>🥇 Major Milestone</h4><p class="small"><strong>Upon achieving a major milestone</strong>, you gain a point of refresh. You can also rename your heroic concept. You can also begin to recover from an extreme consequence.</p><p class="small">Major milestones represent near-total redefinitions of one’s identity as a hero.</p>`
+        }
+      };
+      const milestoneTracker = document.querySelector('#milestoneTracker');
+      const milestoneTrackerText = document.querySelector('#milestoneTracker .list-group');
+
+      function checkForCheckedBoxes() {
+        let blacklist = [];
+        inputs.forEach(input => {
+          if (input.checked) {
+            blacklist.push(input.getAttribute('data-milestone'))
+          }
+        });
+        blacklist = blacklist.reduce((unique, item) => unique.includes(item) ? unique : [
+          ...unique,
+          item
+        ], []);
+        return blacklist;
+      }
+
+      function handleClick() {
+        const m = checkForCheckedBoxes();
+
+        if (m.length > 0) {
+          milestoneTrackerText.innerHTML = '';
+          let text = m.reverse().map((function (value) {
+            milestoneTrackerText.innerHTML += `<li class="list-group-item bg-light">${
+              milestones[`${value}`].text
+            }</li>`;
+            // milestoneTrackerText.innerHTML += '<hr>';
+            return milestones[value];
+          }));
+          $('.collapse').collapse('show');
+        } else {
+          $('.collapse').collapse('hide');
+          milestoneTrackerText.innerHTML = '';
+        }
+      }
+
+      inputs.forEach(input => input.addEventListener('change', handleClick));
+    </script>
+  </body>
+</html>

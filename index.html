@@ -24,11 +24,10 @@
   </head>
 
   <body>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col">
-          <h1 class="display-4">Nest Milestone Tracker</h1>
-          <p class="small">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Nest Milestone Tracker</h1>
+          <p>
             <a href="https://www.drivethrurpg.com/product/153980/Nest--A-World-of-Adventure-for-Fate-Core?affiliate_id=144937">
               PDF on DriveThruRPG</a>
             |
@@ -36,11 +35,10 @@
               <i class="fab fa-github"></i>
               Code on Github</a>
           </p>
-          <hr>
-        </div>
       </div>
     </div>
-    <div class="container mt-5">
+
+    <div class="container my-5">
       <div class="row">
         <div class="col-md-8">
           <h2 class="h3">You Can Gain a
@@ -98,6 +96,30 @@
       </div>
     </div>
 
+    <aside class="bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>How to Use</h3>
+            <p>The Nest World of Adventure for Fate has a "level-as-you-go" mechanic, so each player needs to track events so that they can get milestones. This tracker will let a player track their milestone events by checking them off during play.</p>
+            <p>When a milestone is checked, the text for what happens at that milestone appears on the page to help the player understand their options.</p>
+            <p>After using the milestone, just uncheck the related box(es).</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <footer class="bg-dark text-light">
+
+      <div class="container pt-3">
+        <div class="row">
+          <div class="col">
+            <p>Made with ❤️ by <a href="https://twitter.com/amazingrando">@amazingrando</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script>
       const inputs = document.querySelectorAll('[data-milestone]');
       const milestones = {
@@ -114,13 +136,36 @@
       const milestoneTracker = document.querySelector('#milestoneTracker');
       const milestoneTrackerText = document.querySelector('#milestoneTracker .list-group');
 
-      function checkForCheckedBoxes() {
-        let blacklist = [];
+
+      function setMilestones() {
+        const data = localStorage.getItem('milestones') ? JSON.parse(localStorage.getItem('milestones')) : '';
+        if (data.length > 0) {
+          data.forEach(input => {
+            document.getElementById(input).checked = true;
+          })
+          handleClick(false);
+        }
+      }
+
+      function saveMilestones() {
+        let checkedInputs = [];
         inputs.forEach(input => {
           if (input.checked) {
-            blacklist.push(input.getAttribute('data-milestone'))
+            checkedInputs.push(input.id);
           }
         });
+        localStorage.setItem('milestones', JSON.stringify(checkedInputs))
+      }
+
+      function checkForCheckedBoxes() {
+        let blacklist = [];
+
+        inputs.forEach(input => {
+          if (input.checked) {
+            blacklist.push(input.getAttribute('data-milestone'));
+          }
+        });
+
         blacklist = blacklist.reduce((unique, item) => unique.includes(item) ? unique : [
           ...unique,
           item
@@ -128,26 +173,26 @@
         return blacklist;
       }
 
-      function handleClick() {
+      function handleClick(save) {
         const m = checkForCheckedBoxes();
 
         if (m.length > 0) {
           milestoneTrackerText.innerHTML = '';
-          let text = m.reverse().map((function (value) {
-            milestoneTrackerText.innerHTML += `<li class="list-group-item bg-light">${
+          m.reverse().map(value => milestoneTrackerText.innerHTML += `<li class="list-group-item bg-light">${
               milestones[`${value}`].text
-            }</li>`;
-            // milestoneTrackerText.innerHTML += '<hr>';
-            return milestones[value];
-          }));
+            }</li>`)
           $('.collapse').collapse('show');
         } else {
           $('.collapse').collapse('hide');
           milestoneTrackerText.innerHTML = '';
         }
+        if (save) {
+          saveMilestones()
+        }
       }
 
+      setMilestones();
       inputs.forEach(input => input.addEventListener('change', handleClick));
-    </script>
-  </body>
-</html>
+      </script>
+    </body>
+  </html>

@@ -22,91 +22,107 @@
   </head>
 
   <body>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col">
-          <h1 class="display-4">Nest Milestone Tracker</h1>
-          <p class="small">
-            <a href="https://www.drivethrurpg.com/product/153980/Nest--A-World-of-Adventure-for-Fate-Core?affiliate_id=144937">
-              PDF on DriveThruRPG</a>
-            |
-            <a href="https://github.com/amazingrando/nest-milestone-tracker">
-              <i class="fab fa-github"></i>
-              Code on Github</a>
-          </p>
-          <p>
-            <div class="custom-control custom-switch">
-              <input class="custom-control-input" id="nightMode" type="checkbox">
-              <label class="custom-control-label" for="nightMode">
-                Activate
-                <i class="fas fa-moon text-muted"></i>
-                Night Mode</label>
-            </div>
-          </p>
-          <hr>
-        </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Nest Milestone Tracker</h1>
+        <p>
+          <a href="https://www.drivethrurpg.com/product/153980/Nest--A-World-of-Adventure-for-Fate-Core?affiliate_id=144937">
+            PDF on DriveThruRPG</a>
+          |
+          <a href="https://github.com/amazingrando/nest-milestone-tracker">
+            <i class="fab fa-github"></i>
+            Code on Github</a>
+        </p>
+        <p>
+          <div class="custom-control custom-switch">
+            <input class="custom-control-input" id="nightMode" type="checkbox">
+            <label class="custom-control-label" for="nightMode">
+              Activate
+              <i class="fas fa-moon text-muted"></i>
+              Night Mode</label>
+          </div>
+        </p>
+        <hr>
       </div>
     </div>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-8">
-          <h2 class="h3">You Can Gain a
-            <span class="text-danger">Minor Milestone</span>
-            Upon...</h2>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" data-milestone="minor" id="minor1" type="checkbox">
-            <label class="custom-control-label" for="minor1">...taking physical stress or a mild consequence.</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" data-milestone="minor" id="minor2" type="checkbox">
-            <label class="custom-control-label" for="minor2">...succeeding with style on a difficult roll (whose difficulty is higher than the skill rank used).</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" data-milestone="minor" id="minor3" type="checkbox">
-            <label class="custom-control-label" for="minor3">...succeeding at a major cost on any roll.</label>
-          </div>
-
-          <h2 class="h3 mt-5">You Can Gain a
-            <span class="text-danger">Significant Milestone</span>, if You Have Already Gained a Minor Milestone, Upon...</h2>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" data-milestone="sig" id="sig1" type="checkbox">
-            <label class="custom-control-label" for="sig1">...taking out an opponent.</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" data-milestone="sig" id="sig2" type="checkbox">
-            <label class="custom-control-label" for="sig2">...suffering a moderate consequence or higher.</label>
-          </div>
-
-          <h2 class="h3 mt-5">You Can Gain a
-            <span class="text-danger">Major Milestone</span>, if You Have Already Gained a Significant Milestone, Upon...</h2>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" data-milestone="major" id="major1" type="checkbox">
-            <label class="custom-control-label" for="major1">...conceding a high-stakes conflict (GM’s call).</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" data-milestone="major" id="major2" type="checkbox">
-            <label class="custom-control-label" for="major2">...being taken out in a high-stakes conflict (GM’s call).</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" data-milestone="major" id="major3" type="checkbox">
-            <label class="custom-control-label" for="major3">...defeating a major enemy, such as a Vulturine. In this case, the entire group is eligible for a major milestone.</label>
-          </div>
-        </div>
-
-        <div class="col-md-4 ">
-          <div class="card bg-light mb-5 collapse" id="milestoneTracker">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+  </body>
+</html></div><div class="container my-5">
+<div class="row">
+  <div class="col-md-8">
+    <h2 class="h3">You Can Gain a
+      <span class="text-danger">Minor Milestone</span>
+      Upon...</h2>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" data-milestone="minor" id="minor1" type="checkbox">
+      <label class="custom-control-label" for="minor1">...taking physical stress or a mild consequence.</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" data-milestone="minor" id="minor2" type="checkbox">
+      <label class="custom-control-label" for="minor2">...succeeding with style on a difficult roll (whose difficulty is higher than the skill rank used).</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" data-milestone="minor" id="minor3" type="checkbox">
+      <label class="custom-control-label" for="minor3">...succeeding at a major cost on any roll.</label>
     </div>
 
-    <script>
-      const inputs = document.querySelectorAll('[data-milestone]');
+    <h2 class="h3 mt-5">You Can Gain a
+      <span class="text-danger">Significant Milestone</span>, if You Have Already Gained a Minor Milestone, Upon...</h2>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" data-milestone="sig" id="sig1" type="checkbox">
+      <label class="custom-control-label" for="sig1">...taking out an opponent.</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" data-milestone="sig" id="sig2" type="checkbox">
+      <label class="custom-control-label" for="sig2">...suffering a moderate consequence or higher.</label>
+    </div>
+
+    <h2 class="h3 mt-5">You Can Gain a
+      <span class="text-danger">Major Milestone</span>, if You Have Already Gained a Significant Milestone, Upon...</h2>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" data-milestone="major" id="major1" type="checkbox">
+      <label class="custom-control-label" for="major1">...conceding a high-stakes conflict (GM’s call).</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" data-milestone="major" id="major2" type="checkbox">
+      <label class="custom-control-label" for="major2">...being taken out in a high-stakes conflict (GM’s call).</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input class="custom-control-input" data-milestone="major" id="major3" type="checkbox">
+      <label class="custom-control-label" for="major3">...defeating a major enemy, such as a Vulturine. In this case, the entire group is eligible for a major milestone.</label>
+    </div>
+  </div>
+
+  <div class="col-md-4 ">
+    <div class="card bg-light mb-5 collapse" id="milestoneTracker">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+  </div>
+</div></div><aside class="bg-light py-5">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>How to Use</h3>
+      <p>The Nest World of Adventure for Fate has a "level-as-you-go" mechanic, so each player needs to track events so that they can get milestones. This tracker will let a player track their milestone events by checking them off during play.</p>
+      <p>When a milestone is checked, the text for what happens at that milestone appears on the page to help the player understand their options.</p>
+      <p>After using the milestone, just uncheck the related box(es).</p>
+    </div>
+  </div>
+</div></aside><footer class="bg-dark text-light">
+
+<div class="container pt-3">
+  <div class="row">
+    <div class="col">
+      <p>Made with ❤️ by
+        <a href="https://twitter.com/amazingrando">@amazingrando</a>
+      </p>
+    </div>
+  </div>
+</div></footer><script>
+const inputs = document.querySelectorAll('[data-milestone]');
       const milestones = {
         minor: {
           text: `<h4>🥉 Minor Milestone</h4><p class="small"><strong>Upon reaching a minor milestone</strong>, you can add a stunt; replace one stunt with another; swap two skills that are adjacent on the skill pyramid; or rewrite one of your two free aspects. If you are comfortable with handling a milestone during a session, you can refresh your pool of fate points. You also can begin to recover a moderate consequence.</p><p class="small">Minor milestones represent the gradual recovery of a heroic identity.</p>`
@@ -121,13 +137,36 @@
       const milestoneTracker = document.querySelector('#milestoneTracker');
       const milestoneTrackerText = document.querySelector('#milestoneTracker .list-group');
 
-      function checkForCheckedBoxes() {
-        let blacklist = [];
+
+      function setMilestones() {
+        const data = localStorage.getItem('milestones') ? JSON.parse(localStorage.getItem('milestones')) : '';
+        if (data.length > 0) {
+          data.forEach(input => {
+            document.getElementById(input).checked = true;
+          })
+          handleClick(false);
+        }
+      }
+
+      function saveMilestones() {
+        let checkedInputs = [];
         inputs.forEach(input => {
           if (input.checked) {
-            blacklist.push(input.getAttribute('data-milestone'))
+            checkedInputs.push(input.id);
           }
         });
+        localStorage.setItem('milestones', JSON.stringify(checkedInputs))
+      }
+
+      function checkForCheckedBoxes() {
+        let blacklist = [];
+
+        inputs.forEach(input => {
+          if (input.checked) {
+            blacklist.push(input.getAttribute('data-milestone'));
+          }
+        });
+
         blacklist = blacklist.reduce((unique, item) => unique.includes(item) ? unique : [
           ...unique,
           item
@@ -135,25 +174,25 @@
         return blacklist;
       }
 
-      function handleClick() {
+      function handleClick(save) {
         const m = checkForCheckedBoxes();
 
         if (m.length > 0) {
           milestoneTrackerText.innerHTML = '';
-          let text = m.reverse().map((function (value) {
-            milestoneTrackerText.innerHTML += `<li class="list-group-item bg-light">${
+          m.reverse().map(value => milestoneTrackerText.innerHTML += `<li class="list-group-item bg-light">${
               milestones[`${value}`].text
-            }</li>`;
-            // milestoneTrackerText.innerHTML += '<hr>';
-            return milestones[value];
-          }));
+            }</li>`)
           $('.collapse').collapse('show');
         } else {
           $('.collapse').collapse('hide');
           milestoneTrackerText.innerHTML = '';
         }
+        if (save) {
+          saveMilestones()
+        }
       }
 
+      setMilestones();
       inputs.forEach(input => input.addEventListener('change', handleClick));
 
       const nightModeToggle = document.getElementById('nightMode');

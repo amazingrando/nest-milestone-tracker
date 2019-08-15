@@ -13,13 +13,11 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.10.1/css/brands.css" integrity="sha384-+B+cmd37r9agFUqHw5ABups/+o97SqA/Y6S5b3ly2q0ABacloQs0HZOQAX1NpJhF" rel="stylesheet">
-    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.10.1/css/fontawesome.css" integrity="sha384-jUGOH+gYMCfz2jbO6DW8vojES/a323h7dcoT6qI7Bvod9mew/wwTZryjccmaMOkf" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad311aeb07.js"></script>
 
     <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
     <meta content="#fafafa" name="theme-color">
   </head>
 
@@ -35,6 +33,15 @@
             <a href="https://github.com/amazingrando/nest-milestone-tracker">
               <i class="fab fa-github"></i>
               Code on Github</a>
+          </p>
+          <p>
+            <div class="custom-control custom-switch">
+              <input class="custom-control-input" id="nightMode" type="checkbox">
+              <label class="custom-control-label" for="nightMode">
+                Activate
+                <i class="fas fa-moon text-muted"></i>
+                Night Mode</label>
+            </div>
           </p>
           <hr>
         </div>
@@ -148,6 +155,20 @@
       }
 
       inputs.forEach(input => input.addEventListener('change', handleClick));
+
+      const nightModeToggle = document.getElementById('nightMode');
+      const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+
+      function setColorScheme() {
+        if (isDarkMode && nightModeToggle.checked) {
+          document.querySelector('head').insertAdjacentHTML('beforeend', '<link title="darkmode" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" rel="stylesheet"/>');
+        } else {
+          const darkModeCSS = document.querySelector('[title="darkmode"]')
+          darkModeCSS.disabled = true
+          darkModeCSS.remove()
+        }
+      }
+      nightModeToggle.addEventListener('change', setColorScheme)
     </script>
   </body>
 </html>
